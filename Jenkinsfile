@@ -19,22 +19,8 @@ pipeline {
                              sh 'sudo docker build -t java-repo:$BUILD_TAG .'
                              sh 'sudo docker tag java-repo:$BUILD_TAG lalit7773/pipeline-java:$BUILD_TAG'
                              }
-                }
-                stage("dockerlogin") {
-                     steps { 
-		             withCredentials([string(credentialsId: 'dockerhub_pass', variable: 'dockerhub_pass_var')]) {
-			     sh 'sudo docker login -u lalit7773 -p ${dockerhub_pass_var}'
-			     sh 'sudo docker push lalit7773/pipeline-java:$BUILD_TAG'
-			     }
-		     }
-		      
-		}
-		stage("QAT TESTING") {
-		     steps {  
-		              sh 'sudo docker rm -f $(sudo docker ps -a -q)'
-		              sh 'sudo docker run -dit -p 8080:8080 --name web1tom lalit7773/pipeline-java:$BUILD_TAG
-			      }
+      
 	    }
-        }
-}
+    }
+ }
 
