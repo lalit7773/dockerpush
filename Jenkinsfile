@@ -22,12 +22,13 @@ pipeline {
                  }
 		stage("dockerlogin"){
 		   steps{
-		         withCredentials([string(credentialsId: 'docker_pass', variable: 'docker_pass_var')])
+		         withCredentials([string(credentialsId: 'docker_pass', variable: 'docker_pass_var')]) {
 			 sh 'sudo docker login -u lalit7773 -p ${docker_pass_var}'
 			 sh 'sudo docker push lalit7773/pipeline-java:$BUILD_TAG'
 			 }
 		   }
 
-    }
+         }
+     } 
  }
 
