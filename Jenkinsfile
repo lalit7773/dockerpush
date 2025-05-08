@@ -14,13 +14,7 @@ pipeline {
                              sh 'sudo mvn clean package'
                              }
                            }
-                stage("buildimage") {
-                     steps {
-                             sh 'sudo docker build -t java-repo:$BUILD_TAG .'
-                             sh 'sudo docker tag java-repo:$BUILD_TAG lalit7773/pipeline-java:$BUILD_TAG'
-                             }
       
-	    }
     }
  }
 
