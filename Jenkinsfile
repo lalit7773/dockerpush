@@ -43,11 +43,11 @@ pipeline {
 	       stage("approval stage") {
 	             steps {
 		         script {
-			         Boolean userInput = input(id: 'Proceed1', message: 'Do you want Promote build?',parameters: [[$class: 'BooleanParameterDefinition', defaultValue: true,description:, name: 'Please confirm your agree with this']])
-				 echo 'userInput: ' + userInput
-				 }
-		      }
-	       }
-     } 
- }
+			          Boolean userInput = input(id: 'Proceed1', message: 'Do you want Promote build?',parameters: [[$class: 'BooleanParameterDefinition', defaultValue: true,description: '', name: 'Please confirm your agree with this']])
+                                 echo 'userInput: ' + userInput
+                                 }
+                      }
+               }
+        }
+}
 
