@@ -31,7 +31,7 @@ pipeline {
 		stage("QAT TESTING") {
 		     steps {
 
-		              sh 'sudo docker run -dt --name web5tom -p 8085:8080 lalit7773/pipeline-java:$BUILD_TAG'
+		              sh 'sudo docker run -dt --name web6tom -p 8087:8080 lalit7773/pipeline-java:$BUILD_TAG'
                     }
                }
 	       stage("test-website") {
