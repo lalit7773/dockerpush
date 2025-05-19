@@ -33,7 +33,12 @@ pipeline {
 
 		              sh 'sudo docker run -dt --name web5tom -p 8085:8080 lalit7773/pipeline-java:$BUILD_TAG'
                     }
-         }
+               }
+	       stage("test-website") {
+	             steps {
+		              sh 'sudo curl httpd://13.218.48.96:8085'
+		       }
+	       }
      } 
  }
 
