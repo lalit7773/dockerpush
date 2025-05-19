@@ -32,10 +32,8 @@ pipeline {
 		     steps {
 		              sh 'sudo docker rm -f $(sudo docker ps -a -q)'
 
-		              sh 'sudo docker run -dt --name web3tom -p 8085:8080 lalit7773/pipeline-java:$BUILD_TAG'
+		              sh 'sudo docker run -dt --name web1tom -p 8085:8080 lalit7773/pipeline-java:$BUILD_TAG'
                     }
-	    
-
          }
      } 
  }
