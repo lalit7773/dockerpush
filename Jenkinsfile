@@ -31,12 +31,12 @@ pipeline {
 		stage("QAT TESTING") {
 		     steps {
 
-		              sh 'sudo docker run -dt --name web6tom -p 8087:8080 lalit7773/pipeline-java:$BUILD_TAG'
+		              sh 'sudo docker run -dt --name web7tom -p 8087:8080 lalit7773/pipeline-java:$BUILD_TAG'
                     }
                }
 	       stage("test-website") {
 	             steps {
-		              sh 'sudo curl http://13.218.48.96:8085'
+		              sh 'sudo curl httpd://13.218.48.96:8085'
 		       }
 	       }
      } 
