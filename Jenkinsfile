@@ -37,7 +37,7 @@ pipeline {
 	       stage("test-website") {
 	             steps {
 		              sh 'sudo sleep 20'
-		              sh 'sudo curl http://13.218.48.96:8087'
+		              sh 'sudo curl http://13.218.48.96:8086'
 		       }
 	       }
 	       stage("approval stage") {
