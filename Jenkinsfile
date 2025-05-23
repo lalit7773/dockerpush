@@ -31,16 +31,16 @@ pipeline {
 		stage("QAT TESTING") {
 		     steps {
                               sh 'sudo docker rm -f $(sudo docker ps -a -q)'
-		              sh 'sudo docker run -dt --name web9tom -p 8087:8080 lalit7773/pipeline-java:$BUILD_TAG'
+		              sh 'sudo docker run -dt --name web8tom -p 8087:8080 lalit7773/pipeline-java:$BUILD_TAG'
                     }
                }
 	       stage("test-website") {
 	             steps {
 		              sh 'sudo sleep 20'
-		              sh 'sudo curl http://13.218.48.96:8086'
+		              sh 'sudo curl http://13.218.48.96:8087'
 		       }
 	       }
-	       stage("A:wqpproval-stage") {
+	       stage("approval-stage") {
 	             steps {
 		         script {
 			          Boolean userInput = input(id: 'Proceed1', message: 'Do you want Promote build?',parameters: [[$class: 'BooleanParameterDefinition', defaultValue: true,description: '', name: 'Please confirm your agree with this']])
